@@ -143,28 +143,40 @@ let eyeColor = { blue: [], yellow: [], brown: [], red: [], bluegray: [] };
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi
    (al valore della sua proprietà "eye_color").
 */
-/*for (let i = 0; i < starWarsCharacters.length; i++){
-switch (starWarsCharacters[i].eye_color) 
-{case'blue': eyeColor=blue break
- case 'yellow': eyeColor=yellow break
-  case'brown': eyeColor=brown break
-  case'red': eyeColor=red break
-  case'bluegray': eyeColor=bluegray break
-  default eyeColor=  blue}}*/
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  switch (starWarsCharacters[i].eye_color) {
+    case "blue":
+      eyeColor.blue.push(starWarsCharacters[i]);
+      break;
+    case "yellow":
+      eyeColor.yellow.push(starWarsCharacters[i]);
+      break;
+    case "brown":
+      eyeColor.brown.push(starWarsCharacters[i]);
+      break;
+    case "red":
+      eyeColor.red.push(starWarsCharacters[i]);
+      break;
+    case "bluegray":
+      eyeColor.bluegray.push(starWarsCharacters[i]);
+      break;
+    default:
+      console.log("colore non gestito");
+  }
+}
+console.log("eyeColor", eyeColor);
 
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. 
   Salvala in una variabile chiamata "crewMass".
 */
 let crewMass = 0;
-let count = 0;
-while (count < 10) {
-  let increment = starWarsCharacters[length].mass;
-  crewMass = crewMass + increment;
-  console.log(crewMass);
-  count++;
+let index = 0;
+while (index < starWarsCharacters.length) {
+  crewMass = crewMass + starWarsCharacters[index].mass;
+  index++;
 }
-
+console.log("Massa totale", crewMass);
 /* ESERCIZIO 7
   Crea uno if/else statement per rivelare la tipologia di carico, 
   utilizzando la massa totale, 
@@ -220,6 +232,9 @@ charactersNames = charactersNames.filter(
 );
 
 console.log(charactersNames.lenght);
+
 /* --EXTRA-- ESERCIZIO 10
-  Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
+  Crea una funzionalità che selezioni un elemento casuale dall'array
+   "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo 
+   (a tuo piacimento).
 */
